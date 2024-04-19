@@ -1,0 +1,61 @@
+#include<iostream.h>
+#include<conio.h>
+class employee{
+	public:
+		int no;
+		char name[20];
+		float basic;
+		float hra;
+		float da;
+		float tnetsalary;
+
+	public:
+		void read();
+		float netsalary();
+		void display();
+};
+void employee::read()
+{
+	cout<<"enter name\n";
+	cin>>name;
+	cout<<"enter reg number\n";
+	cin>>no;
+	cout<<"enter basic\n";
+	cin>>basic;
+	cout<<"enter hra"<<endl;
+	cin>>hra;
+	cout<<"enter da\n";
+	cin>>da;
+}
+float employee::netsalary()
+{
+	tnetsalary=basic+hra+da;
+	return tnetsalary;
+}
+void employee::display()
+{
+	cout<<"*******details are as follows********"<<endl;
+	cout<<"name="<<name<<endl;
+	cout<<"register number="<<no<<endl;
+	cout<<"basic salary="<<basic<<endl;
+	cout<<"hra="<<hra<<endl;
+	cout<<"da="<<da<<endl;
+	cout<<" net salary="<<tnetsalary<<endl;
+}
+void main()
+{
+	int n;
+	clrscr();
+	cout<<"enter number of employee\n";
+	cin>>n;
+	employee *emp=new employee(n);
+	cout<<"enter details \n";
+	for(int i=0;i<n;i++)
+	{
+		emp[i].read();
+		emp[i].netsalary();
+	}
+	for(i=0;i<n;i++)
+		emp[i].display();
+	getch();
+}

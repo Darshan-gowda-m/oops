@@ -1,0 +1,56 @@
+#include<iostream.h>
+#include<conio.h>
+int search(int arr[],int n,int key)
+{
+	for(int i=0;i<n;i++)
+	{
+		if(arr[i]==key)
+		{
+			return i+1;
+		}
+	}
+	return -1;
+}int search(double arr[],int n,int key)
+{
+	for(int i=0;i<n;i++)
+	{
+		if(arr[i]==key)
+		{
+			return i+1;
+		}
+	}
+	return -1;
+}
+  int main()
+  {
+	int n,arr[100],key1;
+	double arr1[100],key2;
+	clrscr();
+	cout<<"enter size of int  array"<<n<<endl;
+	for(int i=0;i<n;i++)
+		cin>>arr[i];
+	cout<<"enter the key"<<endl;
+	cin>>key1;
+       int in1=search(arr,n,key1);
+	if(in1==-1)
+		cout<<"not found"<<endl;
+	else
+		cout<<"present at "<<in1<<endl;
+	cout<<"enter size of double array"<<endl;
+	cin>>n;
+	cout<<"enter elements"<<endl;
+	for(i=0;i<n;i++)
+		cin>>arr1[i];
+	cout<<"enter the key"<<endl;
+	cin>>key1;
+       int di=search(arr1,n,key1);
+       if(di==-1)
+       {
+	cout<<"not found"<<endl;
+       }
+       else
+       {
+		cout<<"key found at "<<di<<endl;
+       }
+       getch();
+  }

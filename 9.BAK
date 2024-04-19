@@ -1,0 +1,34 @@
+
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+#include<ctype.h>
+template<class T>
+T successor(T x)
+{
+	return (x+1);
+}
+template<class X>
+X sum(X arr[],int n)
+{
+	X total=0;
+	for(int i=0;i<n;i++)
+		total=total+arr[i];
+	return total;
+}
+void main()
+{
+	cout<<"successor of 5="<<successor(5)<<endl;
+	cout<<"Successor of 5.5="<<successor(5.5)<<endl;
+	cout<<"SUccesor of 'a'="<<successor('a')<<endl;
+	int iarr[]={1,2,3,4,5};
+	double darr[]={1.5,2.5,3.5,4.5,5.5};
+	float farr[]={1,2,3,4,5};
+	int isize=sizeof(iarr)/sizeof(int);
+	int fsize=sizeof(farr)/sizeof(float);
+	int dsize=sizeof(darr)/sizeof(double);
+	cout<<"sum of int array="<<sum(iarr,isize)<<endl;
+	cout<<"sum of float array="<<sum(farr,fsize)<<endl;
+	cout<<"sum  of double array="<<sum(darr,dsize)<<endl;
+	getch();
+}

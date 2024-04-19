@@ -1,0 +1,39 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+class D2;
+class D1{
+	private:int meters,centimeters;
+	public:void getdata()
+	{
+		cout<<"enter meters and centimeters\n";
+		cin>>meters>>centimeters;
+	}
+	friend void add(D1 o1,D2 o2);
+};
+class D2{
+	private:int inches,feet;
+	public:void getdata()
+	{
+		cout<<"enter feet and inches\n";
+		cin>>feet>>inches;
+	}
+	friend void add(D1 o1,D2 o2);
+};
+void add(D1 o1,D2 o2)
+{
+	int d1_inches=o1.meters*39.37+o1.centimeters*0.3937;
+	int tinches=d1_inches+o2.feet*12+o2.inches;
+	int feet=tinches/12;
+	int inches=tinches%12;
+	cout<<"total distance:"<<feet<<"feets "<<inches<<"inches"<<endl;
+}
+int main()
+{        clrscr();
+	D1 d1;
+	D2 d2;
+	d1.getdata();
+	d2.getdata();
+	add(d1,d2);
+	getch();
+}
